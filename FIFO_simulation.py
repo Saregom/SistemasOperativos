@@ -2,15 +2,28 @@ class FIFOQueue:
     def __init__(self):
         self.queue = []
 
-    def add_process(self, process):
+    def add_process(self, process=None):
+        if process is None:
+            name = input("\nNombre del nuevo proceso: ")
+            if not name:
+                name = "Proceso sin nombre"
+            while True:
+                try:
+                    priority = int(input("Prioridad del nuevo proceso: "))
+                    process = {'name': name, 'priority': priority}
+                    break
+                except ValueError:
+                    print("!!Error: La prioridad debe ser un numero entero\n")
+        
         self.queue.append(process)
         print(f"Proceso agregado: {self.print_process(process)}")
 
     def show_current_process(self):
+        print(f"\nProceso actual: ")
         if self.queue:
-            print(f"\nProceso actual: {self.print_process(self.queue[0])}")
+            print(f"1. {self.print_process(self.queue[0])}")
         else:
-            print("\nNo hay procesos en la cola")
+            print("No hay procesos en la cola")
 
     def remove_process(self):
         if self.queue:
@@ -74,16 +87,7 @@ if __name__ == "__main__":
 
         match option:
             case "a":
-                name = input("\nNombre del nuevo proceso: ")
-                if not name:
-                    name = "Proceso sin nombre"
-                while True:
-                    try:
-                        priority = int(input("Prioridad del nuevo proceso: "))
-                        new_queue.add_process({'name': name, 'priority': priority})
-                        break
-                    except ValueError:
-                        print("!!Error: La prioridad debe ser un numero entero\n")
+                new_queue.add_process()
             case "p":
                 new_queue.show_current_process()
             case "e":
@@ -94,6 +98,6 @@ if __name__ == "__main__":
                 print("Saliendo...")
                 break
             case _:
-                print("!!Opcion no valida")
+                print("\n!!Opcion no valida")
 
     print("\nSe han ejecutado todos los procesos")

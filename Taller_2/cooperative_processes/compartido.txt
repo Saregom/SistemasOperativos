@@ -1,0 +1,11 @@
+[Proceso1] 20:09:21,96 
+[Proceso1] 20:09:26,11 
+[Proceso2] 20:09:28,66 
+[Proceso1] 20:09:31,13 
+[Proceso2] 20:09:33,15 
+[Proceso1] 20:09:36,15 
+[Proceso2] 20:09:38,16 
+[Proceso1] 20:09:41,17 
+[Proceso2] 20:09:43,18 
+[Proceso1] 20:09:46,19 
+[Proceso2] 20:09:48,20 

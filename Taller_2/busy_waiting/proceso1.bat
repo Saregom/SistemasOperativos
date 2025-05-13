@@ -1,0 +1,19 @@
+@echo off
+:loop
+echo [Proceso1] %time% >> compartido.txt
+findstr "Proceso2" compartido.txt > nul
+if errorlevel 1 (
+    echo Esperando mensaje de Proceso2...
+) else (
+    echo Mensaje recibido de Proceso2.
+)
+timeout /t 5 > nul
+:espera
+findstr "FIN" compartido.txt > nul
+if errorlevel 1 (
+timeout /t 2 > nul
+goto espera
+)
+echo [Proceso1] Fin detectado.
+goto loop
+

@@ -1,0 +1,8 @@
+[Proceso1] 20:30:09,52 
+[Proceso2] 20:30:50,13 
+[Proceso2] Mensaje final: FIN 
+[Proceso2] 20:30:55,13 
+[Proceso1] 20:30:56,18 
+[Proceso2] Mensaje final: FIN 
+[Proceso2] 20:31:00,16 
+[Proceso1] 20:31:01,21 
